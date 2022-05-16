@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     private float jumpTracker = 0.0f;
     private float iFrameCooldown = 2.0f;
     private float iFrameTracker = 0.0f;
-    private int health = 100; 
+    public int health = 100; 
 
     // Start is called before the first frame update
     void Start()

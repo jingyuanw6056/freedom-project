@@ -12,11 +12,13 @@ public class slime : MonoBehaviour
     private float unTracker = 0.0f;
 
     public int health;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         jump = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,6 +38,12 @@ public class slime : MonoBehaviour
                 unTracker = 0.0f;
             }
             jumpTracker = 0.0f;
+            anim.SetBool("Jump", true);
+        }
+
+        if (jumpTracker > 0.60f) 
+        {
+            anim.SetBool("Jump", false);
         }
 
         if (health <= 0)
